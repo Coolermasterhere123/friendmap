@@ -1,0 +1,31 @@
+<!--
+  ADD these permissions inside the <manifest> tag of
+  android/app/src/main/AndroidManifest.xml
+  (above the <application> tag)
+-->
+
+<!-- Standard location -->
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+<!-- Background location (Android 10+) — required for lock screen updates -->
+<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+<!-- Foreground service — keeps GPS alive when screen is off -->
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+
+<!-- Wake lock — prevents CPU from sleeping between GPS updates -->
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+<!-- Internet for Supabase -->
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+<!--
+  ADD this inside <application> tag:
+  (BackgroundGeolocation foreground service declaration)
+-->
+<service
+    android:name="com.transistorsoft.locationmanager.service.TrackingService"
+    android:foregroundServiceType="location" />

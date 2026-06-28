@@ -1,0 +1,17 @@
+Add these keys to ios/App/App/Info.plist inside the <dict> tag:
+
+<!-- Why the app needs location -->
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>FriendMap shows your location to friends in your group.</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>FriendMap shares your location in the background so friends can find you even when the app is closed.</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>FriendMap shares your location in the background so friends can find you even when the app is closed.</string>
+
+<!-- Enable background location updates -->
+<key>UIBackgroundModes</key>
+<array>
+    <string>location</string>
+</array>
